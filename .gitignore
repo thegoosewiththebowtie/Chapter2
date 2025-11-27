@@ -1,0 +1,5 @@
+.compiler/
+.git/
+.idea/
+cmake-build-debug/
+lib/
