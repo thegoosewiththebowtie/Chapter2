@@ -1,12 +1,10 @@
 /* [≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡▲≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡] */
-//
-// Created by Vlada on 11/27/2025.
-//
-
 #include "common.h"
 
 namespace chapter2::common {
-    template<typename tValueType>
+    sConfig sGlobalStuff::_config;
+    sSave sGlobalStuff::_save;
+    /*template<typename tValueType>
     void sConfig::xctSet(const std::string& arg_group , const std::string& arg_key , tValueType arg_value) {
         switch(arg_group[0]) {
             case 'c' : if(!std::is_same_v<tValueType , std::vector<sf::Keyboard::Key>>) { throw FatalMistake(arg_group); }
@@ -19,7 +17,6 @@ namespace chapter2::common {
                         break;
                     case 'l' : _keys[eMainKeys::LEFT] = arg_value;
                         break;
-
                     case 'r' : _keys[eMainKeys::RIGHT] = arg_value;
                         break;
                     case 'u' : _keys[eMainKeys::UP] = arg_value;
@@ -47,6 +44,6 @@ namespace chapter2::common {
             case 'u' : break;
             default : throw FatalMistake(arg_group);
         }
-    }
+    }*/
 }
 /* [≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡▲≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡] */

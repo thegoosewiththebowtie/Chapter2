@@ -1,23 +1,21 @@
 /* [≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡▲≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡] */
 #pragma once
+#include <filesystem>
 #include "common.h"
-#include "string"
-#include "unordered_map"
-#include "SFML/Window/Keyboard.hpp"
+#include "bits/fs_path.h"
 
 namespace chapter2::initializer {
-
     class Initializer {
-        Initializer(){}
         public:
-            static std::string xctGetConfigPath();
-            void xctInitConfig();
-        std::unordered_map<common::eMainKeys, sf::Keyboard::Key> xctGetKeys();
+            static std::filesystem::path xctGetDataPath();
+            static void                  xctInitConfig();
     };
     class Parser {
-        common::sConfig xctGetConfig(std::string arg_path);
-        void xctWriteConfig(common::sConfig arg_config, std::string arg_path);
+        public:
+            static common::sConfig xctGetConfig(const std::filesystem::path& arg_path);
+            static void            xctWriteConfig(const common::sConfig& arg_config , const std::filesystem::path& arg_path);
+            static common::sSave   xctGetSaveFile(const std::filesystem::path& arg_path);
+            static void            xctWriteSaveFile(const common::sSave& arg_save , const std::filesystem::path& arg_path);
     };
-
 }
 /* [≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡▲≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡] */

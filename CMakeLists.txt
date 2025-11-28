@@ -12,7 +12,7 @@ FetchContent_Declare(SFML
                      EXCLUDE_FROM_ALL
                      SYSTEM)
 FetchContent_MakeAvailable(SFML)
-
+include_directories(lib)
 add_executable(Chapter2 main.cpp
                src/initializer.cpp
                src/initializer.h
