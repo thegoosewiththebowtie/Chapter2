@@ -1,3 +1,4 @@
+#*[≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡▲≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡] */
 cmake_minimum_required(VERSION 3.31)
 project(Chapter2 LANGUAGES CXX)
 
@@ -13,10 +14,12 @@ FetchContent_Declare(SFML
                      SYSTEM)
 FetchContent_MakeAvailable(SFML)
 include_directories(lib)
-add_executable(Chapter2 main.cpp
-               src/initializer.cpp
-               src/initializer.h
-               src/common.cpp
-               src/common.h)
+
+file(GLOB_RECURSE SOURCES "src/*.cpp")
+file(GLOB_RECURSE HEADERS "src/*.hpp")
+message("Sources: ${SOURCES}")
+message("Headers: ${HEADERS}")
+add_executable(Chapter2 main.cpp ${SOURCES} ${HEADERS})
 target_compile_features(Chapter2 PRIVATE cxx_std_23)
 target_link_libraries(Chapter2 PRIVATE SFML::Graphics)
+#*[≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡▲≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡] */
